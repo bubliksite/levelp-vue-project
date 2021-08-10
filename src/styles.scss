@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@400;700&display=swap');
+
+* {
+  font-family: 'Georama', sans-serif;
+}
+
+body {
+  color: #212529;
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(108, 117, 125);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  ul {
+    padding-left: 0;
+    list-style: none;
+    width: 50%;
+
+    li {
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      &.person {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      p {
+        margin: 0;
+      }
+      span {
+        font-size: 1.5rem;
+        color: #fd7e14;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.card {
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  width: 90%;
+  &__steps {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__buttons {
+    display: flex;
+    button {
+      cursor: pointer;
+      padding: 0.5rem 2.5rem;
+      margin-right: 1.5rem;
+      border-radius: 2rem;
+      border: 3px solid #fd7e14;
+      background-color: #fd7e14;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: bold;
+      div {
+        display: flex;
+        align-items: center;
+        span {
+          margin: 0 0.5rem;
+        }
+      }
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      &.outline {
+        background-color: transparent;
+        color: #fd7e14;
+      }
+    }
+  }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  &.active {
+    .step__number {
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+  &.prev {
+    color: #aaa;
+    .step__number {
+      opacity: 0.4;
+      color: #212529;
+    }
+  }
+  &.next {
+    color: #aaa;
+    .step__number {
+      background-color: #aaaaaa;
+      opacity: 0.5;
+      color: #212529;
+    }
+  }
+  &__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.6rem;
+    background-color: #fd7e14;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+  &__progress-bar {
+    width: 100%;
+    background-color: #fd7e14;
+    height: 1rem;
+    position: absolute;
+    right: -110%;
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .card__random {
+    color: #fd7e14;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
